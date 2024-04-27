@@ -14,7 +14,7 @@ export const AllPosts = () => {
 
     const getPosts = async () => {
         try {
-            const response = await axios.get("http://localhost:8080/api/post/getAll");
+            const response = await axios.get("https://fs-backend-one.vercel.app/api/post/getAll");
             setPosts(response.data);
         } catch (error) {
             console.error(error);
@@ -23,7 +23,7 @@ export const AllPosts = () => {
 
     const handleEditPost = async (values) =>{
         try {
-            const response = await axios.put("http://localhost:8080/api/post/update", values);
+            const response = await axios.put("https://fs-backend-one.vercel.app/api/post/update", values);
             console.log(response.data);
             getPosts();
             setShowEdit(false); // Hide edit form after submission
@@ -34,7 +34,7 @@ export const AllPosts = () => {
 
     const deletePost = async (postId) => {
         try {
-            await axios.delete(`http://localhost:8080/api/post/delete/${postId}`);
+            await axios.delete(`https://fs-backend-one.vercel.app/api/post/delete/${postId}`);
             getPosts();
         } catch (error) {
             console.error(error);
@@ -43,7 +43,7 @@ export const AllPosts = () => {
 
     const handleCreatePost = async (values) => {
         try {
-            const response = await axios.post("http://localhost:8080/api/post/create", values);
+            const response = await axios.post("https://fs-backend-one.vercel.app/api/post/create", values);
             console.log(response.data);
             getPosts();
         } catch (error) {

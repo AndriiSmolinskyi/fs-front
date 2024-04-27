@@ -14,6 +14,7 @@ const validationSchema = Yup.object().shape({
 
 
 export const PostCreate = ({CreatePost}) => {
+    
 
     return(
         <div>
